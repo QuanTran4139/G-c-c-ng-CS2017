@@ -44,8 +44,6 @@
   * Authentication verifies who you are (User-ID) while Non-Repudiation verifies what you did (e.g Sending a message).
   * Authenticity is about one party (say, Alice) interacting with another (Bob) to convince Bob that some data really comes from Alice.
   * Non-repudiation is about Alice showing to Bob a proof that some data really comes from Alice, such that not only Bob is convinced, but Bob also gets the assurance that he could show the same proof to Charlie, and Charlie would be convinced, too, even if Charlie does not trust Bob.
-* **Exercise 4: A company uses a firewall for which a new vulnerability was just discovered. The company could immediately fix the vulnarability by employing an external consultant for EUR 19.000,–. In a month, a patch fixing the vulnerability will be available at no cost from thefirewall vendor. The IT department estimates that the cost of an attack exploiting the vulnerability is EUR 200.000,–. The probability of a successful attack within the next month is p. Calculate the cost for both alternatives as a function of p and advise which alternative to choose if the cost is to be minimized.**
-  * Alternative 1: 19.000USD Alternative 2: 200.000*p - 0*(1-p) = 200.00p Unless p <= 0.095, we should choose 1 alternative.
 # Lec2
 ## Cryptography
 
@@ -104,107 +102,6 @@
    * CM![](img/CM1.PNG)
    
    * ![](img/CM2.PNG)
-In the following, we consider a symmetric cipher with a block size of four bits and key
-0110. For ECB, we obtain the following:
-Plaintext 	Ciphertext 	Plaintext 	Ciphertext
-0000
-0001
-0010
-0011
-0100
-0101
-0110
-0111	1110
-1100
-1010
-0011
-1000
-1011
-0100
-0000	1000
-1001
-1010
-1011
-1100
-1101
-1110
-1111	1001
-0010
-1101
-0001
-0101
-1111
-0110
-0111
-1. Complete the following table for ECB with key 0110:
-Ciphertext 	Plaintext 	Ciphertext 	Plaintext
-0000
-0001
-0010
-0011
-0100
-0101
-0110
-0111	0111
-1011
-1001
-0011
-0110
-1100
-1110
-1111	1000
-1001
-1010
-1011
-1100
-1101
-1110
-1111	0100
-1000
-0010
-0101
-0001
-1010
-0000
-1101
-2.In ECB, what would be the encryption for 0010 1111 1001 0100 1100 with key 0110?
-1010 0111 0010 1000 0101
-3. In ECB, what would be the decryption for 1101 0101 0110 0001 0110 with key 0110
-with key 0110?
-1010 1100 1110 1011 1110
-4. For CBC, what would be the encryption for 0010 1111 1001 0100 1100 with IV 1101
-with key 0110?
-Encryption:	1111 0110 1001 1011 0001
-Cypher text:	1001 0000 1111 1101 0111
-5. For CBC, what would be the dencryption for 1101 0101 0110 0001 0110 with IV 1011?
-Decryption:	1011 0011 0000 0111 0000
-Plaintext:		0000 0011 0011 0100 0100
-6. For Output Feedback Mode with n=1 (i.e. use of one bit per encryption/decryption
-operation), what would be the encryption for 0010 1111 1001 0100 1100 with IV
-1101 and key 0110?
-	0010  1111  1001  0100 1100
-IV = 1101 key = 0110
-IV 1: 1010 (+) 0010 = 1000
-IV 2: 1011  (+) 0110 = 1101 => 1101 (+) 1111 = 0010
-IV3: 0111 (+) 0110 = 0001 => 0001 (+) 1001 = 1000
-IV4: 1110 (+) 0110 = 1000 => 1000 (+) 0100 = 1100
-IV5: 1101 (+) 0110 = 1011 => 1011 (+) 1100 = 0111 => 1000 0010 1000 1100 0111
-7. For Output Feedbacl Mode with n=1, what would be the decryption for 1101 0101
-0110 0001 0110 with IV 1011 and key 0110?
- 1101 0101 0110 0001 0110
-IV = 1011 key = 0110
-IV1: 1011 + 0110 = 1101 => 1101 + 1101 = 0000
-IV2: 0111 + 0110 = 0001 => 0001 + 0101 = 0100
-IV3: 1110 + 0110 = 1000 => 1000 + 0110 = 1110
-IV4: 1101 + 0110 = 1011 => 1011 + 0001 = 1010
-IV5: 1011 + 0110 = 1101 => 1101 + 0110 = 1011
-
- => 1101 0101 0110 0001 0110 = 0000 0100 1110 1010 1011
-
-8. For Cipher Feedback Mode with n=2, what would be the encryption for 0010 1111
-1001 0100 1100 with IV 1101 and key 0110?
-9. For Cipher Feedback Mode with n=2, what would be the decryption for 1101 0101
-0110 0001 0110 with IV 1011 and key 0110? 
 # Lec3
 ## Authentication
 
